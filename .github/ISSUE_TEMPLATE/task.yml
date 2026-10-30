@@ -1,0 +1,61 @@
+name: Task
+description: A piece of assigned project work
+title: "Task: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill in every field. A task is Done only when the file exists, its check passes, evidence is linked, and the reviewer has checked it.
+  - type: input
+    id: owner
+    attributes:
+      label: Owner (name)
+      description: Who is responsible? Use the person's name.
+    validations:
+      required: true
+  - type: dropdown
+    id: boss
+    attributes:
+      label: Which boss (milestone)?
+      options:
+        - Boss 1 - Understand and set up
+        - Boss 2 - Data
+        - Boss 3 - Train one model
+        - Boss 4 - Three versions
+        - Boss 5 - Local fingerprints
+        - Boss 6 - Register on practice blockchain
+        - Boss 7 - Connect workflow
+        - Boss 8 - Tests
+        - Boss 9 - Research and paper
+        - Boss 10 - Rehearse and submit
+    validations:
+      required: true
+  - type: textarea
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      description: What must be finished first?
+    validations:
+      required: true
+  - type: textarea
+    id: checklist
+    attributes:
+      label: Checklist
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Completion evidence required
+      description: File paths, logs, or pull requests that prove it is finished.
+    validations:
+      required: true
+  - type: input
+    id: reviewer
+    attributes:
+      label: Reviewer (name)
+    validations:
+      required: true
