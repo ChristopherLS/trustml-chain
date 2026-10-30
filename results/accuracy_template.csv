@@ -1,0 +1,1 @@
+training_run_id,stage,epochs_completed_total,test_games_count,correct_predictions,accuracy_fraction,baseline_accuracy_fraction,split_seed,training_seed,checkpoint_file,checkpoint_size_bytes,evidence_path,date_measured,measured_by,notes
