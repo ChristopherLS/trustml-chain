@@ -1,0 +1,61 @@
+# ---------- Secrets (never commit) ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# ---------- Python ----------
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# ---------- Node / Hardhat (adjust after the real project is generated) ----------
+node_modules/
+blockchain/node_modules/
+blockchain/artifacts/
+blockchain/cache/
+blockchain/coverage/
+blockchain/typechain-types/
+blockchain/ignition/deployments/chain-31337/
+blockchain/deployments/local*.json
+# The ABI file that other code needs SHOULD be tracked: keep it at blockchain/abi/
+
+# ---------- Local blockchain state ----------
+blockchain/.local-chain/
+*.chain
+
+# ---------- Downloaded datasets (README and manifests stay trackable) ----------
+data/*
+!data/README.md
+!data/manifests/
+
+# ---------- Large model checkpoints (README and fingerprint manifests stay trackable) ----------
+models/*
+!models/README.md
+!models/manifests/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# ---------- Large documents live in shared storage, not GitHub ----------
+paper/*.docx
+presentation/*.pptx
+~$*
+
+# ---------- Temporary and system files ----------
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
