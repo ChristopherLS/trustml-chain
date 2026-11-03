@@ -10,8 +10,8 @@ Update this file at least twice a week. Keep it honest: never write progress tha
 | Did a repository with this name already exist? | No (lookup returned "not found" for the verified owner) |
 | Planning documents and templates created | Yes (see the file list in the repo) |
 | Collaborator invitations sent | **No.** Usernames have not been verified |
-| Issues created | See the Issues tab and the "Issues" section below |
-| Project board created | See "Project board" below |
+| Issues created | Yes: one per boss (issues #1 to #10), with owner, reviewer, checklist, and evidence; milestones and labels added |
+| Project board created | Yes: https://github.com/users/ChristopherLS/projects/1 (columns: Not started, In progress, Blocked, Review, Done). Because the repo is private, teammates need repo access to see the items |
 | Dataset columns and license verified | **No.** Not yet verified. Remington does this in Boss 2 |
 | Exact tool versions verified | **No.** See [ENVIRONMENT.md](ENVIRONMENT.md) |
 | Any model, contract, test, paper text, or result created | **No.** Implementation has not started |
@@ -65,10 +65,6 @@ Add a dated entry each week. Do not edit old entries; add new ones.
 ### Week of Oct 30
 - (nothing recorded yet)
 
-## Issues
+## Issues and board
 
-Milestone issues are listed in the repository's Issues tab (one per boss). If any are missing, the exact titles and descriptions are in [BUILD_ORDER.md](BUILD_ORDER.md).
-
-## Project board
-
-If no board exists yet, Chris can create one: GitHub > Projects > New project > Board. Use columns: Not started, In progress, Blocked, Review, Done. Add the issues.
+One issue per boss lives in the repository's Issues tab (#1 to #10), grouped by milestone. Labels: `owner:*`, `ws:*`, `status:*`. Owners are shown by label because teammates' GitHub usernames are not verified yet; assign people once they accept the invitation. The board is at https://github.com/users/ChristopherLS/projects/1. When you change a task's status, change the `status:*` label and the board column together.
