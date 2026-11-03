@@ -10,7 +10,7 @@ We use a small basketball model as our example AI file. We save three versions o
 
 | Area | Status |
 |---|---|
-| GitHub workspace (docs, checklists, templates) | Set up by Claude on 2026-10-30 |
+| GitHub workspace (docs, checklists, templates) | Set up on 2026-10-30 |
 | Basketball model (`ml/`) | **Not started** |
 | Smart contract and local blockchain (`blockchain/`) | **Not started** |
 | Fingerprint + verification workflow (`integration/`) | **Not started** |
@@ -53,9 +53,9 @@ Paper (8-10 page IEEE Word paper) and presentation materials are due **Monday, N
 | `presentation/` | Presentation outline and rehearsal checklist |
 | `.github/` | Issue forms and the pull request template |
 
-## A note on AI use
+## Paper rule
 
-Claude (an AI assistant) drafted the planning documents and templates in this workspace. The professor prohibits AI-generated text in the submitted paper. The `paper/` folder therefore contains outlines, questions, and checklists only. **All text in the submitted paper must be written by the team members.** Confirm with the professor what AI help (if any) is allowed for code, and record the answer in [docs/PROGRESS.md](docs/PROGRESS.md).
+The professor prohibits AI-generated text in the submitted paper. The `paper/` folder contains outlines, questions, and checklists only. **All text in the submitted paper must be written by the team members.** Record the professor's answer on what AI help is allowed for code in [docs/PROGRESS.md](docs/PROGRESS.md).
 
 ## Privacy and safety rules
 

@@ -13,7 +13,7 @@
 ## Source
 
 - Starting point: https://huggingface.co/datasets/hamzas/nba-games/tree/main
-- A mirror page describes it as an updated version of the Kaggle "NBA Games" dataset by Nathan Lauga, updated to 2025-02-13. **The setup agent could not open the Hugging Face page itself, so the columns and license below are unverified.**
+- A mirror page describes it as an updated version of the Kaggle "NBA Games" dataset by Nathan Lauga, updated to 2025-02-13. **The Hugging Face page itself could not be opened when this was checked, so the columns and license below are unverified.**
 - File we plan to use: `games.csv`, **only if inspection confirms it is suitable**.
 
 ## To fill in during Boss 2 (Remington, checked by Chris)

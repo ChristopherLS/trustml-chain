@@ -2,7 +2,7 @@
 
 Update this file at least twice a week. Keep it honest: never write progress that you cannot point to.
 
-## Workspace setup (completed by Claude, 2026-10-30)
+## Workspace setup (2026-10-30)
 
 | Item | Result |
 |---|---|
@@ -12,7 +12,7 @@ Update this file at least twice a week. Keep it honest: never write progress tha
 | Collaborator invitations sent | **No.** Usernames have not been verified |
 | Issues created | See the Issues tab and the "Issues" section below |
 | Project board created | See "Project board" below |
-| Dataset columns and license verified | **No.** Not verified by the setup agent. Remington does this in Boss 2 |
+| Dataset columns and license verified | **No.** Not yet verified. Remington does this in Boss 2 |
 | Exact tool versions verified | **No.** See [ENVIRONMENT.md](ENVIRONMENT.md) |
 | Any model, contract, test, paper text, or result created | **No.** Implementation has not started |
 

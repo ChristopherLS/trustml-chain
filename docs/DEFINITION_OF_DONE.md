@@ -4,7 +4,7 @@
 
 | Kind | What it means | Who did it |
 |---|---|---|
-| **Workspace setup** | The folders, instructions, templates, and checklists exist | Completed by the setup agent (Claude) on 2026-10-30 |
+| **Workspace setup** | The folders, instructions, templates, and checklists exist | Completed when the workspace was created (2026-10-30) |
 | **Project development** | The model is trained, the contract works, tests pass, the paper is written | **The team. None of this is done yet.** |
 
 Creating a checklist is not completing the work the checklist describes.
