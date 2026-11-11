@@ -1,0 +1,25 @@
+{
+    "original_rows": 29755,
+    "missing_required_rows_removed": 99,
+    "duplicate_game_ids_removed": 29,
+    "clean_games": 29627,
+    "training_games": 23701,
+    "test_games": 5926,
+    "training_start": "2003-10-05",
+    "training_end": "2021-01-30",
+    "test_start": "2021-01-30",
+    "test_end": "2025-02-12",
+    "overlapping_game_ids": 0,
+    "features": [
+        "FG_PCT_home",
+        "REB_home",
+        "AST_home",
+        "FG_PCT_away",
+        "REB_away",
+        "AST_away"
+    ],
+    "target": "HOME_TEAM_WINS",
+    "baseline_class": 1,
+    "baseline_test_accuracy": 0.5568680391495107,
+    "split_method": "Chronological 80/20"
+}

@@ -1,0 +1,23 @@
+{
+    "training_games": 23701,
+    "test_games": 5926,
+    "seed": 42,
+    "baseline_accuracy": 0.5568680391495107,
+    "checkpoints": {
+        "1": {
+            "test_accuracy": 0.7723590731620789,
+            "average_training_loss": 0.6418673694133759,
+            "checkpoint": "C:\\Users\\remin\\Documents\\trustml-chain\\models\\checkpoints\\basketball_epoch_1.pt"
+        },
+        "5": {
+            "test_accuracy": 0.8304083943367004,
+            "average_training_loss": 0.38426812618009504,
+            "checkpoint": "C:\\Users\\remin\\Documents\\trustml-chain\\models\\checkpoints\\basketball_epoch_5.pt"
+        },
+        "10": {
+            "test_accuracy": 0.831083357334137,
+            "average_training_loss": 0.3821272619308964,
+            "checkpoint": "C:\\Users\\remin\\Documents\\trustml-chain\\models\\checkpoints\\basketball_epoch_10.pt"
+        }
+    }
+}
