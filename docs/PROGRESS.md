@@ -20,18 +20,20 @@ Update this file at least twice a week. Keep it honest: never write progress tha
 
 | Boss | Owner | Status | Evidence (link) |
 |---|---|---|---|
-| 1. Understand and set up | Chris | Not started | |
-| 2. Download and inspect data | Remington | Not started | |
-| 3. Train and save one model | Remington | Not started | |
-| 4. Continue training, save three versions | Remington | Not started | |
-| 5. Verify fingerprints locally | Shabach | Not started | |
-| 6. Register on practice blockchain | Kaleb | Not started | |
-| 7. Connect full workflow | Shabach | Not started | |
-| 8. Tampering, permission, timing, gas tests | Shabach | Not started | |
+| 1. Understand and set up | Chris | Ready for review | Workspace, issues #1 to #10 and project board created (see setup table above) |
+| 2. Download and inspect data | Remington | Ready for review | `ml/TrustML_Basketball_Epoch1/data/data_report.json` |
+| 3. Train and save one model | Remington | Ready for review | `ml/TrustML_Basketball_Epoch1/models/basketball_epoch_1.pt` and `training_report.json` |
+| 4. Continue training, save three versions | Remington | In progress | Accuracy reported for epochs 1, 5, 10 in `training_report.json`; only the epoch 1 model file is in the repo |
+| 5. Verify fingerprints locally | Shabach | In progress | Epoch 1 fingerprint verified (see presentation); code and log not yet committed |
+| 6. Register on practice blockchain | Kaleb | Ready for review | [blockchain/README.md](../blockchain/README.md), `gas-report.md` |
+| 7. Connect full workflow | Shabach | In progress | Epoch 1: 4 of 4 checks passed in Codespaces; epochs 5 and 10 waiting for model files; code and log not yet committed |
+| 8. Tampering, permission, timing, gas tests | Shabach | In progress | Tamper and no-record checks done on epoch 1; permission and duplicate refusals in Kaleb's tests and smoke test; gas measured; timing not measured |
 | 9. Research and paper | Chris | Not started | |
-| 10. Rehearse and submit | Chris | Not started | |
+| 10. Rehearse and submit | Chris | In progress | Deck built in Google Slides; text copy in [presentation/SLIDES.md](../presentation/SLIDES.md) |
 
 Allowed statuses: Not started, In progress, Blocked, Ready for review, Done.
+
+_Statuses above were updated on 2026-11-16 from the files in this repository and the final presentation. Owners: please confirm or correct your own row. Boss 9 (research and paper) is unchanged because nothing about it is tracked in the repo._
 
 **Completed tracked tasks:** __ of __ (count of checked boxes in `team/*.md`). This is a count, not a percentage of the work; tasks differ in effort.
 
