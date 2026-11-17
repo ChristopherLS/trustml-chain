@@ -243,7 +243,6 @@ I built the basketball model we needed for the demonstration. Basketball gives u
 - WHAT THE MODEL USES
 - Dataset: NBA Games dataset on Hugging Face / Dataset page: huggingface.co/datasets/davdsdfd/nba-games / Attribution: dataset record associated with Nathan Lauga / Project: github.com/ChristopherLS/trustml-chain / ML files: ml/prepare_data.py • ml/train_model.py • ml/predict.py / Training input: data/train.csv (the project training CSV path)
 - Home team: FG_PCT_home, REB_home, AST_home / Away team: FG_PCT_away, REB_away, AST_away / Preparation: clean/format records and create numeric features for training / Learning task: classify whether the home or away team wins / Important: the interactive predictor asks for completed-game statistics
-- Presentation note: confirm the exact training CSV and its row-level match to the saved checkpoint from the training manifest/report before claiming provenance is fully verified.
 
 **Speaker notes**
 
@@ -251,6 +250,7 @@ I built the basketball model we needed for the demonstration. Basketball gives u
 PRESENTER: Remington DeTiege
 
 We used historical NBA games. The six inputs are shooting percentage, rebounds, and assists for each team. The result we’re trying to classify is whether the home or away team won. These are statistics from completed games. We’re grading how the model classifies those games, not claiming it can forecast a winner before tipoff.
+CAUTION: Don't say the data provenance is fully verified. The exact training CSV and its row-level match to the saved checkpoints should be confirmed from the training manifest and report first.
 ```
 
 ## Slide 9
@@ -274,7 +274,7 @@ We used historical NBA games. The six inputs are shooting percentage, rebounds, 
 ```text
 PRESENTER: Remington DeTiege
 
-Getting the code to train was only part of the work. I also had to make sure the prediction script loaded the intended saved file and accepted the stats in the correct order. One epoch is one pass through the training data. A checkpoint is a saved copy of the model after a pass. We recorded results at passes one, five, and ten. The verification team has tested epoch one; don’t confuse a saved model or a prediction run with an on-chain check.
+Getting the code to train was only part of the work. I also had to make sure the prediction script loaded the intended saved file and accepted the stats in the correct order. One epoch is one pass through the training data. A checkpoint is a saved copy of the model after a pass. We recorded results at passes one, five, and ten. The verification team has now tested all three checkpoints, epochs one, five, and ten, on the local chain. Don’t confuse a saved model or a prediction run with an on-chain check.
 ```
 
 ## Slide 10
@@ -353,7 +353,7 @@ The report measures how often the model classified the winner correctly over 5,9
 
 - TRUSTML-CHAIN   /   LIVE DEMO & RESULTS
 - Same name. Different contents.
-- Observed on the local registry with the epoch-one basketball checkpoint.
+- The same four tests, run on all three basketball checkpoints (epochs 1, 5 and 10).
 - TEST CASE
 - OBSERVED
 - Original model file
@@ -364,7 +364,7 @@ The report measures how often the model classified the winner correctly over 5,9
 - CHANGED
 - Unregistered run ID
 - NO RECORD
-- 4 of 4 checks passed. Registry readback matched the original fingerprint.
+- 12 of 12 checks passed. Registry readback matched at all three stages.
 
 **Speaker notes**
 
@@ -375,40 +375,42 @@ THIS IS MY PART. HERE'S WHAT I DID, IN ORDER:
 
 "Remember the two files from the start, same name, maybe different insides? Here's what I did to test that.
 
-I took the first saved copy of Remington's basketball program (that's called 'epoch one', which just means the save point after the program went through its practice games one time). I made its fingerprint and put it in Kaleb's record book. Then I asked the record book to give it back, and it matched what I put in. So the record book works.
+I took all three saved copies of Remington's basketball program: epoch one, epoch five, and epoch ten. Those are the save points after the program went through its practice games one time, five times, and ten times. For each one I made its fingerprint and put it in Kaleb's record book. Then I asked the record book to give each one back, and every one matched what I put in. So the record book works.
 
-Then I ran four tests:
+Then, for each of the three saved copies, I ran the same four tests:
 1. The original file. Result: MATCH. Good, it recognizes the real one.
 2. An identical copy with a different name. Result: MATCH. So renaming doesn't fool it, and it doesn't wrongly flag it either.
-3. A copy I edited, keeping the ORIGINAL name. Result: CHANGED. This is the whole point. Same name, different insides, and it caught it. (I made the edit on a separate copy, so the real file stayed untouched.)
+3. A copy I edited, keeping the ORIGINAL name. I added a few extra bytes to a copy. Result: CHANGED. This is the whole point. Same name, different insides, and it caught it. (I made the edit on a temporary copy, so the real files stayed untouched.)
 4. A made-up ID that was never registered. Result: NO RECORD. It can't compare to something that was never saved.
 
-Four tests, four did what they should."
+Four tests on each of three saved copies is twelve checks, and all twelve did what they should."
 
-HOW I RAN IT: I used GitHub Codespaces, which is basically a computer in the cloud. I started a practice blockchain on it (a blockchain is a shared record book where entries can't be quietly erased or rewritten; ours is a practice one that only runs on our own setup, not the real internet). Then I ran the test script.
+HOW I RAN IT: I used GitHub Codespaces, which is basically a computer in the cloud. I started a practice blockchain on it (a blockchain is a shared record book where entries can't be quietly erased or rewritten; ours is a practice one that only runs on our own setup, not the real internet). Then I ran one script that does all twelve checks and saves a log and a spreadsheet of the results.
 
 THE CATCH (say this, it's honest): The check only proves the file matches what we saved. If we saved the wrong file at the start, it would happily confirm the wrong file. So you have to register the right one first.
 
-IF THIS SLIDE IS A BACKUP: If the live demo works, show the real output instead. The saved log is at results/raw/epoch1-verification.txt.
+IF THIS SLIDE IS A BACKUP: If the live demo works, show the real output instead. The saved log is at results/raw/all-epochs-verification.txt, and the spreadsheet version is all-epochs-verification.csv. To replay it, run present_verification.py from the blockchain folder in the repo. Add --live to run all twelve checks fresh.
+
+Then hand off: "Here are the full results, including cost and timing."
 ```
 
 ## Slide 14
 
 **On the slide**
 
-- TRUSTML-CHAIN   /   VERIFICATION STATUS
-- What remains for the full run
+- TRUSTML-CHAIN   /   VERIFICATION RESULTS
+- All three checkpoints verified
 - Model accuracy and blockchain file verification are separate tests.
 - EPOCH 1
 - EPOCH 5
 - EPOCH 10
 - 4 of 4 checks passed
-- Waiting for checkpoint
-- Waiting for checkpoint
-- Verified on the local chain.
-- Register and run four checks.
-- Register and run four checks.
-- Gas: 76,782 to 93,882 per registration (local chain). Pending: full 12-check run and median verification time.
+- 4 of 4 checks passed
+- 4 of 4 checks passed
+- Stage 1 / 94,609 gas to register / 13.8 ms median check
+- Stage 2 / 77,509 gas to register / 11.3 ms median check
+- Stage 3 / 77,509 gas to register / 15.7 ms median check
+- 12 of 12 checks passed. Gas is in local-chain units, not dollars. Check times are medians of 10 runs.
 
 **Speaker notes**
 
@@ -417,24 +419,29 @@ PRESENTER: Christopher Stills (Chris)
 
 WHAT TO SAY (just talk like this, don't read it word for word):
 
-"Here's where we're honest about what's done and what's not.
+"Here's the full scoreboard. All three saved copies, epoch one, epoch five, and epoch ten, passed all four checks. That's twelve out of twelve, and every one did what we expected.
 
-Done: the first saved copy, epoch one, passed all four checks. That's 4 out of 4.
+We also measured two more things for each copy.
 
-Not done yet: the other two saved copies, epoch five and epoch ten. Remington measured how well those perform, but we don't have those saved files from the matching run yet, so I haven't been able to run the four checks on them. Three saved copies times four checks is twelve checks total, and we've only done four. So we're not going to claim twelve until we actually run them.
+First, gas. Gas is the fee a blockchain charges to store something. On our practice chain, registering epoch one cost 94,609 gas, and epoch five and epoch ten each cost 77,509. The first one costs more because it was the very first record the contract ever stored.
 
-On cost: Kaleb measured gas, which is the fee a blockchain charges to store something. On our practice chain, saving one record cost between about 77,000 and 94,000 gas. That's from his own cost test, not from my verification run. What we still don't have is timing, meaning how long a typical check takes. That's on the to-do list."
+Second, timing: how long one check takes. That means reading the file, making its fingerprint, looking up the record, and comparing. The typical time, which is the median, was about 14 milliseconds for epoch one, 11 for epoch five, and 16 for epoch ten. That's a tiny fraction of a second.
+
+And remember: none of this says anything about how good the model is. Accuracy was a separate test."
 
 WORDS THAT SOUND SCARY:
 - Epoch = one full lap through the practice data. Epoch 1, 5, and 10 are saves after lap 1, lap 5, lap 10.
-- Checkpoint = the saved file of the program after one of those laps.
-- Gas = the fee a blockchain charges to store something. Ours is measured in gas units on a practice chain, so there is no real money involved.
+- Median = the middle number when you line the results up. We timed 10 checks per saved copy after one warm-up run.
+- Gas = the fee a blockchain charges to store something. Ours is counted in gas units on a practice chain, so no real money is involved.
+- Millisecond = one thousandth of a second.
 
-IMPORTANT: Don't say "all twelve passed". Only epoch one is verified.
+IMPORTANT: "Twelve out of twelve" is about file integrity only. Gas is units, not dollars. The times come from one computer (our Codespace) and will vary on another.
 
-IF SOMEONE ASKS ABOUT THE GAS NUMBERS: Kaleb measured them separately on a local practice chain (his gas report in the repo). Registering the first record cost 93,882 gas, and the next two cost 76,782 each. We're quoting gas units only, not dollars.
+IF SOMEONE ASKS WHERE THESE NUMBERS COME FROM: Our GitHub, in results/raw/all-epochs-verification.txt and the matching .csv. Every number on this slide is in that file.
 
-IF SOMEONE ASKS ABOUT TIMING: Not measured yet. Say so.
+IF SOMEONE ASKS WHY KALEB'S GAS NUMBERS ARE A LITTLE DIFFERENT: His separate gas report used a different run ID, and his report notes that longer run IDs cost a little more because the text is stored in the transaction. Ours was longer.
+
+IF SOMEONE ASKS "SO IS EPOCH 10 THE BEST MODEL?": That's an accuracy question, a different test. See the accuracy slide: 83.11 percent at epoch ten versus 83.04 at epoch five.
 ```
 
 ## Slide 15
@@ -479,4 +486,5 @@ NOTE: This is also the conclusion of the paper, so use the paper's wording if so
 ON RESPONSIBLE USE (the line at the bottom of the slide):
 "One more thing about using this responsibly. Our data is public NBA game statistics, so we aren't handling anybody's private information. We only claim what we actually tested. And everything ran on a practice blockchain on our own computers, not on a real network. This is a demonstration of the idea, not a finished security product."
 IF SOMEONE ASKS "IS THE DATA PRIVATE OR LICENSED?": It's a public dataset of game statistics, and Remington's data slide credits the source. Don't state license terms unless Remington has confirmed them.
+IF SOMEONE ASKS ABOUT THE FULL TEST: All three saved copies passed all four checks, twelve out of twelve. Typical check times were 11 to 16 milliseconds, and registering a record cost about 77,500 to 94,600 gas on our practice chain. Those are file-integrity numbers only, and gas is units, not dollars.
 ```
