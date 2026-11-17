@@ -5,7 +5,6 @@ CS 400 / Computer Science Seminar II, Grambling State University, Fall 2026.
 Live deck (Google Slides): https://docs.google.com/presentation/d/12BmQhDlLuAlPtgjIAs_yRfXNadviqbQAk4zByrYrPUc/edit
 
 This file is a text copy of the deck (slide text and speaker notes) kept in the repository. The Google Slides deck is the source of truth. For a PowerPoint copy, use File > Download > Microsoft PowerPoint in Google Slides.
-
 ## Slide 1
 
 **On the slide**
@@ -409,7 +408,7 @@ IF THIS SLIDE IS A BACKUP: If the live demo works, show the real output instead.
 - Verified on the local chain.
 - Register and run four checks.
 - Register and run four checks.
-- Pending: full 12-check run, gas per registration, and median verification time.
+- Gas: 76,782 to 93,882 per registration (local chain). Pending: full 12-check run and median verification time.
 
 **Speaker notes**
 
@@ -424,14 +423,18 @@ Done: the first saved copy, epoch one, passed all four checks. That's 4 out of 4
 
 Not done yet: the other two saved copies, epoch five and epoch ten. Remington measured how well those perform, but we don't have those saved files from the matching run yet, so I haven't been able to run the four checks on them. Three saved copies times four checks is twelve checks total, and we've only done four. So we're not going to claim twelve until we actually run them.
 
-Also not measured yet for my run: 'gas' and timing. Gas is just the fee a blockchain charges to save something. Timing is how long a typical check takes. Those are on the to-do list."
+On cost: Kaleb measured gas, which is the fee a blockchain charges to store something. On our practice chain, saving one record cost between about 77,000 and 94,000 gas. That's from his own cost test, not from my verification run. What we still don't have is timing, meaning how long a typical check takes. That's on the to-do list."
 
 WORDS THAT SOUND SCARY:
 - Epoch = one full lap through the practice data. Epoch 1, 5, and 10 are saves after lap 1, lap 5, lap 10.
 - Checkpoint = the saved file of the program after one of those laps.
-- Gas = the fee a blockchain charges to store something.
+- Gas = the fee a blockchain charges to store something. Ours is measured in gas units on a practice chain, so there is no real money involved.
 
-IMPORTANT: Don't say "all twelve passed". Only epoch one is verified. If asked about Kaleb's cost numbers, say he ran a separate cost test, but we're not reporting numbers from my run until it's done.
+IMPORTANT: Don't say "all twelve passed". Only epoch one is verified.
+
+IF SOMEONE ASKS ABOUT THE GAS NUMBERS: Kaleb measured them separately on a local practice chain (his gas report in the repo). Registering the first record cost 93,882 gas, and the next two cost 76,782 each. We're quoting gas units only, not dollars.
+
+IF SOMEONE ASKS ABOUT TIMING: Not measured yet. Say so.
 ```
 
 ## Slide 15
@@ -447,6 +450,7 @@ IMPORTANT: Don't say "all twelve passed". Only epoch one is verified. If asked a
 - The file matches the registered fingerprint. / A mismatch flags a difference.
 - Accuracy needs its own test on unseen games. / A match does not establish accuracy or safety.
 - Research teams could verify model versions before reuse. / Start with a trusted reference.
+- RESPONSIBLE USE   Public NBA game statistics, no claims beyond the evidence, practice chain only.
 - Same name or different name, the check depends on the contents.
 
 **Speaker notes**
@@ -471,4 +475,8 @@ Same name or different name, what matters is what's inside. Thanks everybody, we
 IF SOMEONE ASKS "SO IS THE MODEL ACCURATE?": That's a different test. On 5,926 games the program hadn't seen, it got 83.11 percent right at epoch ten. Guessing the home team every time would get 55.69 percent. That's the comparison.
 
 NOTE: This is also the conclusion of the paper, so use the paper's wording if someone asks follow-ups.
+
+ON RESPONSIBLE USE (the line at the bottom of the slide):
+"One more thing about using this responsibly. Our data is public NBA game statistics, so we aren't handling anybody's private information. We only claim what we actually tested. And everything ran on a practice blockchain on our own computers, not on a real network. This is a demonstration of the idea, not a finished security product."
+IF SOMEONE ASKS "IS THE DATA PRIVATE OR LICENSED?": It's a public dataset of game statistics, and Remington's data slide credits the source. Don't state license terms unless Remington has confirmed them.
 ```
