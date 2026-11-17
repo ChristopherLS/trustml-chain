@@ -23,11 +23,11 @@ Update this file at least twice a week. Keep it honest: never write progress tha
 | 1. Understand and set up | Chris | Ready for review | Workspace, issues #1 to #10 and project board created (see setup table above) |
 | 2. Download and inspect data | Remington | Ready for review | `ml/TrustML_Basketball_Epoch1/data/data_report.json` |
 | 3. Train and save one model | Remington | Ready for review | `ml/TrustML_Basketball_Epoch1/models/basketball_epoch_1.pt` and `training_report.json` |
-| 4. Continue training, save three versions | Remington | In progress | Accuracy reported for epochs 1, 5, 10 in `training_report.json`; only the epoch 1 model file is in the repo |
-| 5. Verify fingerprints locally | Shabach | In progress | Epoch 1 fingerprint verified (see presentation); code and log not yet committed |
+| 4. Continue training, save three versions | Remington | Ready for review | All three model files and `training_report.json` in `ml/TrustML_Basketball_Epoch1/models/` |
+| 5. Verify fingerprints locally | Shabach | Ready for review | `results/raw/all-epochs-verification.txt` (fingerprints verified for epochs 1, 5, 10) |
 | 6. Register on practice blockchain | Kaleb | Ready for review | [blockchain/README.md](../blockchain/README.md), `gas-report.md` |
-| 7. Connect full workflow | Shabach | In progress | Epoch 1: 4 of 4 checks passed in Codespaces; epochs 5 and 10 waiting for model files; code and log not yet committed |
-| 8. Tampering, permission, timing, gas tests | Shabach | In progress | Tamper and no-record checks done on epoch 1; permission and duplicate refusals in Kaleb's tests and smoke test; gas measured; timing not measured |
+| 7. Connect full workflow | Shabach | Ready for review | 12 of 12 checks passed: `results/raw/all-epochs-verification.txt` and `.csv`; code in `blockchain/blockchain/blockchain/demo_verify_all.py` and `present_verification.py` |
+| 8. Tampering, permission, timing, gas tests | Shabach | In progress | Edited-copy and no-record checks, gas and timing for all three checkpoints are in `all-epochs-verification.csv`; permission and duplicate refusals are in Kaleb's tests. The test plan's three separate tamper variants (one byte changed, bytes appended, bytes removed) were not run separately |
 | 9. Research and paper | Chris | Not started | |
 | 10. Rehearse and submit | Chris | In progress | Deck built in Google Slides; text copy in [presentation/SLIDES.md](../presentation/SLIDES.md) |
 
