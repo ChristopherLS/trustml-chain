@@ -8,15 +8,17 @@ We use a small basketball model as our example AI file. We save three versions o
 
 ## Where things stand
 
+Status as of 2026-11-16, based on what is actually in this repository and on the final presentation.
+
 | Area | Status |
 |---|---|
 | GitHub workspace (docs, checklists, templates) | Set up on 2026-10-30 |
-| Basketball model (`ml/`) | **Not started** |
-| Smart contract and local blockchain (`blockchain/`) | **Not started** |
-| Fingerprint + verification workflow (`integration/`) | **Not started** |
-| Tests and measurements (`tests/`, `results/`) | **Not started** |
-| Research and paper (`research/`, `paper/`) | **Not started** |
-| Presentation (`presentation/`) | **Not started** |
+| Basketball model (`ml/`) | Epoch 1 model file, training data copy and reports are on `main` (`ml/TrustML_Basketball_Epoch1/`). The full prepare, train and predict scripts are on branch `rem/ml-training` and are **not merged yet**. Reported accuracy on 5,926 held-out games: 77.24% (epoch 1), 83.04% (epoch 5), 83.11% (epoch 10). Only the epoch 1 model file is in the repo |
+| Smart contract and local blockchain (`blockchain/`) | Built and tested on a local Hardhat chain. See [blockchain/README.md](blockchain/README.md). Gas measurements are in `blockchain/blockchain/blockchain/gas-report.md` |
+| Fingerprint + verification workflow (`integration/`) | Epoch 1 passed 4 of 4 checks (MATCH, MATCH, CHANGED, NO RECORD) in GitHub Codespaces. The verification code and the saved log are **not committed here yet** |
+| Tests and measurements (`tests/`, `results/`) | Gas report done. Epochs 5 and 10 not yet verified (checkpoint files not available), timing not measured, `results/` CSVs are still templates |
+| Research and paper (`research/`, `paper/`) | Only outlines and templates are committed |
+| Presentation (`presentation/`) | Deck built in Google Slides. Text copy with speaker notes: [presentation/SLIDES.md](presentation/SLIDES.md) |
 
 Nothing in the project is "done" because a document exists. See [docs/DEFINITION_OF_DONE.md](docs/DEFINITION_OF_DONE.md).
 
