@@ -13,10 +13,10 @@ Status as of 2026-11-16, based on what is actually in this repository and on the
 | Area | Status |
 |---|---|
 | GitHub workspace (docs, checklists, templates) | Set up on 2026-10-30 |
-| Basketball model (`ml/`) | Epoch 1 model file, training data copy and reports are on `main` (`ml/TrustML_Basketball_Epoch1/`). The full prepare, train and predict scripts are on branch `rem/ml-training` and are **not merged yet**. Reported accuracy on 5,926 held-out games: 77.24% (epoch 1), 83.04% (epoch 5), 83.11% (epoch 10). Only the epoch 1 model file is in the repo |
-| Smart contract and local blockchain (`blockchain/`) | Built and tested on a local Hardhat chain. See [blockchain/README.md](blockchain/README.md). Gas measurements are in `blockchain/blockchain/blockchain/gas-report.md` |
-| Fingerprint + verification workflow (`integration/`) | Epoch 1 passed 4 of 4 checks (MATCH, MATCH, CHANGED, NO RECORD) in GitHub Codespaces. The verification code and the saved log are **not committed here yet** |
-| Tests and measurements (`tests/`, `results/`) | Gas report done. Epochs 5 and 10 not yet verified (checkpoint files not available), timing not measured, `results/` CSVs are still templates |
+| Basketball model (`ml/`) | All three model files (epochs 1, 5, 10), `training_report.json` and the training data copy are on `main` (`ml/TrustML_Basketball_Epoch1/`). Reported accuracy on 5,926 held-out games: 77.24%, 83.04%, 83.11%. The full prepare, train and predict scripts are on branch `rem/ml-training` and are **not merged yet** |
+| Smart contract and local blockchain (`blockchain/`) | Built and tested on a local Hardhat chain. See [blockchain/README.md](blockchain/README.md) |
+| Fingerprint + verification workflow | **Done for all three model files: 12 of 12 checks passed** (original and renamed copy MATCH, edited copy CHANGED, unknown run NO RECORD). Run with `blockchain/blockchain/blockchain/demo_verify_all.py`; replay or present the saved results with `present_verification.py` in the same folder |
+| Tests and measurements (`results/`) | Evidence is in `results/raw/all-epochs-verification.txt` and `.csv`: registration gas (94,609 / 77,509 / 77,509) and median check time (13.8 / 11.3 / 15.7 ms) per checkpoint. The edited copy in this run adds bytes to a copy of each file. The CSV templates in `results/` are still templates |
 | Research and paper (`research/`, `paper/`) | Only outlines and templates are committed |
 | Presentation (`presentation/`) | Deck built in Google Slides. Text copy with speaker notes: [presentation/SLIDES.md](presentation/SLIDES.md) |
 
