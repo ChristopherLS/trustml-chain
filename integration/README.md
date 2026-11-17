@@ -1,6 +1,6 @@
 # integration/ : Connecting Model Files to Verification (Shabach)
 
-**Status: NOT STARTED. No code exists here yet.**
+**Status: workflow run, code not committed yet.** The epoch 1 verification (4 of 4 checks: MATCH, MATCH, CHANGED, NO RECORD) was run in GitHub Codespaces against the local registry. The verification code and the saved terminal log (`results/raw/epoch1-verification.txt`) still need to be committed to this folder. Epochs 5 and 10 are waiting for their model files.
 
 ## What belongs here
 
