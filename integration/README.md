@@ -1,6 +1,6 @@
 # integration/ : Connecting Model Files to Verification (Shabach)
 
-**Status: workflow run, code not committed yet.** The epoch 1 verification (4 of 4 checks: MATCH, MATCH, CHANGED, NO RECORD) was run in GitHub Codespaces against the local registry. The verification code and the saved terminal log (`results/raw/epoch1-verification.txt`) still need to be committed to this folder. Epochs 5 and 10 are waiting for their model files.
+**Status: working.** The verification code lives in `blockchain/blockchain/blockchain/` next to the registry helper it uses: `demo_verify_all.py` runs all 12 checks (3 model files x 4 cases) and writes `results/raw/all-epochs-verification.txt` and `.csv`; `present_verification.py` replays or presents the results (add `--live` to rerun). Last run: **12 of 12 checks passed**.
 
 ## What belongs here
 
