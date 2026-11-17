@@ -1,0 +1,32 @@
+Run ID: basketball-full-20261117T024713659610Z
+Contract: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+
+Epoch 1 | Stage 1
+Registration receipt: {"tx_hash": "b1efd452b7473dafc65698ece34320adc243069ffdab012726993aa6de74263b", "block_number": 2, "gas_used": 94609, "submitter": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"}
+Registry readback: MATCH
+Original: expected=MATCH, observed=MATCH
+Renamed exact copy: expected=MATCH, observed=MATCH
+Edited copy, same name: expected=CHANGED, observed=CHANGED
+Unknown run ID: expected=NO RECORD, observed=NO RECORD
+Median verification time: 13.832 ms over 10 checks
+
+Epoch 5 | Stage 2
+Registration receipt: {"tx_hash": "3340cf8cc8fe8aa64930afa10e7b2bc6c6bada98cec317d7f07e9fc33c32a166", "block_number": 3, "gas_used": 77509, "submitter": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"}
+Registry readback: MATCH
+Original: expected=MATCH, observed=MATCH
+Renamed exact copy: expected=MATCH, observed=MATCH
+Edited copy, same name: expected=CHANGED, observed=CHANGED
+Unknown run ID: expected=NO RECORD, observed=NO RECORD
+Median verification time: 11.281 ms over 10 checks
+
+Epoch 10 | Stage 3
+Registration receipt: {"tx_hash": "42b7d9da8267be679c7ab9d97dbeac34d69efedea4077b3b35de79676965cc44", "block_number": 4, "gas_used": 77509, "submitter": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"}
+Registry readback: MATCH
+Original: expected=MATCH, observed=MATCH
+Renamed exact copy: expected=MATCH, observed=MATCH
+Edited copy, same name: expected=CHANGED, observed=CHANGED
+Unknown run ID: expected=NO RECORD, observed=NO RECORD
+Median verification time: 15.693 ms over 10 checks
+
+Checks passed: 12/12
+CSV saved to: /home/codespace/projects/trustml-chain/results/raw/all-epochs-verification.csv
